@@ -39,22 +39,23 @@ async function Getevo(id){
     PokemonsEvo.innerHTML += `
     <div class="sheet-containercard">
     <img class="sheet" src="">
-    <h1 id="titlepok"> </h1>
+    <h1 id="titlepok">${data2.chain.evolves_to[0].species.name} </h1>
     </div>`;
 }
 
 async function Getpokemons(){
     for(let i=0 ; i<pokemonList.length; i++){
    await Getpoke(pokemonList[i])
+   await Getevo(pokemonList[i])
     }}
 Getpokemons();
 
-async function Getevolutions(){
+/* async function Getevolutions(){
     for(let i=0 ; i<pokemonList.length; i++){
    await Getevo(pokemonList[i])
     }}
     Getevolutions();
-
+ */
 
   /*   document.addEventListener('Change', function() {
         var button = document.createElement('input');
